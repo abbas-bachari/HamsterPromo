@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='HamsterPromo',
-    version='1.0.4',
+    version='1.0.0',
     author='Abbas Bachari',
     author_email='abbas-bachari@hotmail.com',
     description='Hamster Kombat Promo Code Generator',

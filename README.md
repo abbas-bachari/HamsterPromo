@@ -23,7 +23,7 @@ pip install git+https://github.com/abbas-bachari/HamsterPromo.git
 ##  Generate a key 
 
 ```python
-from HamsterPormo.utils import Games
+from HamsterPromo.utils import Games
 import asyncio
 
 
@@ -48,7 +48,7 @@ if __name__=="__main__":
 ### Generate a key for all games
 
 ```python
-from HamsterPormo import Generator
+from HamsterPromo import Generator
 import asyncio
 
 
@@ -71,7 +71,7 @@ if __name__=="__main__":
 ### Get saved key
 
 ```python
-from HamsterPormo.utils import Games
+from HamsterPromo.utils import Games
 
 games=Games()
 
@@ -92,7 +92,7 @@ print(all_keys)
 ### Delete saved keys
 
 ```python
-from HamsterPormo.utils import Games
+from HamsterPromo.utils import Games
 
 games=Games()
 
