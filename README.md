@@ -23,6 +23,7 @@ pip install git+https://github.com/abbas-bachari/HamsterPromo.git
 ##  Generate a key 
 
 ```python
+from HamsterPromo import Generator
 from HamsterPromo.utils import Games
 import asyncio
 
