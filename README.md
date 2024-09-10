@@ -1,4 +1,4 @@
-[![HamsterPromo](https://img.shields.io/badge/HamsterPromo%20-Version%201.0.0-green?style=plastic&logo=codemagic)](https://python.org)
+[![HamsterPromo](https://img.shields.io/badge/HamsterPromo%20-Version%201.0.1-green?style=plastic&logo=codemagic)](https://python.org)
 
 
 
