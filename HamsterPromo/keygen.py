@@ -5,17 +5,6 @@ from .api import ApiClient
 import aiohttp,aiohttp_proxy
 import asyncio
 
-async def get_apps_info(proxy_url) -> list[dict[str, Any]]:
-    headers = {
-    "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0",
-    "Host": "api21.datavibe.top"}
-    proxy_conn = aiohttp_proxy.ProxyConnector().from_url(proxy_url) if proxy_url else None
-    async with aiohttp.ClientSession(headers=headers, connector=proxy_conn) as http_client:
-        response_json = await http_client.get('https://api21.datavibe.top/api/Games',error_context='getting Apps Info')
-        return response_json
-
-
-
 
 class Generator:
     
@@ -76,3 +65,4 @@ class Generator:
         await asyncio.gather(*tasks)
        
         
+
