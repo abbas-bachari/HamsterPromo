@@ -86,7 +86,15 @@ async def get_games_data(proxy_url:str=None) :
 
 async def update_games_data(proxy_url:str=None):
     new_games_data  :dict=await get_games_data(proxy_url)
-    settings_data={}
+    try:
+        settings_data :dict=json.load(open('hamster-promo-settings.json',encoding='utf-8'))
+        games_data=settings_data["games"]
+    except:
+        settings_data={"promo_db_path": "promo_data.db"}
+        games_data=GAMES_DATA
+
+
+   
     if new_games_data:
         games_data=[] 
         for data in new_games_data:
@@ -97,31 +105,17 @@ async def update_games_data(proxy_url:str=None):
                             "event_timeout": data.get('minWaitAfterLogin')
                             })
                 
-    else:
-        try:
-            settings_data :dict=json.load(open('settings.json',encoding='utf-8'))
-            games_data=settings_data["games"]
-        except:
-            settings_data={}
-            games_data=GAMES_DATA
-            
-        
-    settings_data={"promo_db_path": "promo_data.db","games":games_data}
+    settings_data["games"]=games_data
     
-    with open('settings.json','w',encoding='utf-8') as save:
+    with open('hamster-promo-settings.json','w',encoding='utf-8') as save:
         json.dump(settings_data,save,indent=4,ensure_ascii=False)
     
 
-    try:
-        settings_data :dict=json.load(open('settings.json',encoding='utf-8'))
-            
-    except:
-        settings_data={"promo_db_path": "promo_data.db","games":games_data}
+   
     
     return settings_data
 
 
-    
 
 class settings:
     promo_db_path:str='promo_data.db'
@@ -131,7 +125,6 @@ class settings:
         settings=asyncio.run(update_games_data())
         self.__dict__.update(settings)
                
-        
         
 
 
